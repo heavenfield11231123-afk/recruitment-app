@@ -1,0 +1,12 @@
+# シークレット（絶対にコミットしない）
+.streamlit/secrets.toml
+
+# データベース / 生成物
+recruitment_list.db
+*.xlsx
+streamlit.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
