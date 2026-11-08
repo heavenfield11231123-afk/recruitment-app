@@ -2,7 +2,7 @@
 # クラウド展開時の再現性のためバージョンを固定（ローカル検証済みの構成）
 
 streamlit==1.67.0          # Web UI / サーバー（1.64 以降で pillow 13 に対応）
-anthropic==1.4.0           # Anthropic Messages API クライアント
+anthropic==2.5.0           # Anthropic Messages API クライアント
 requests==2.34.2           # r.jina.ai へのHTTP取得
 pandas==3.0.5              # データフレーム / Excel出力
 openpyxl==3.1.5            # pandas の .xlsx 書き出しエンジン
