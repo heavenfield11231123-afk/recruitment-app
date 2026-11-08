@@ -1,9 +1,12 @@
 # 求人広告営業リスト作成アプリ - 依存ライブラリ
 # クラウド展開時の再現性のためバージョンを固定（ローカル検証済みの構成）
 
-streamlit==1.63.0          # Web UI / サーバー
+streamlit==1.67.0          # Web UI / サーバー（1.64 以降で pillow 13 に対応）
 anthropic==1.4.0           # Anthropic Messages API クライアント
 requests==2.34.2           # r.jina.ai へのHTTP取得
 pandas==3.0.5              # データフレーム / Excel出力
 openpyxl==3.1.5            # pandas の .xlsx 書き出しエンジン
 duckduckgo-search==8.1.1   # 電話番号 / HP URL の補完検索（import: duckduckgo_search）
+
+# --- セキュリティ: 間接依存の最低バージョン（security-console の週次スキャンで検出） ---
+pillow>=13.0.0             # streamlit 経由の間接依存。12.x に Critical/High の脆弱性 31 件
