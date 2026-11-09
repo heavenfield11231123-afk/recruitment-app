@@ -1,6 +1,7 @@
 # 依存関係の脆弱性修正・更新を自動で PR にする（security-console の週次スキャンと連動）
 # - セキュリティ修正は脆弱性が公開され次第すぐに PR が作られる
 # - 通常の更新は週 1 回（月曜 07:00 JST）にまとめて 1 本の PR にする
+# - メジャーバージョンアップは動作確認が必要なので自動 PR にしない（セキュリティ修正は対象のまま）
 version: 2
 updates:
   - package-ecosystem: "pip"
@@ -11,6 +12,9 @@ updates:
       time: "07:00"
       timezone: "Asia/Tokyo"
     open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       security:
         applies-to: security-updates
